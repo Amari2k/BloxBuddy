@@ -5,35 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BloxBuddy">
-    <title>BloxBuddy - Contact</title>
+    <title>Bloxbuddy - Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* Reusing existing styles for consistency */
-        @font-face {
-            font-family: 'Font Awesome 6 Free';
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2'),
-                url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff') format('woff');
-            font-weight: 900;
-            font-style: normal;
-        }
-
-        .fas {
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: #fff;
-            overflow-x: hidden;
-            transition: opacity 1s ease;
+            background: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
 
         header {
@@ -45,7 +25,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         header .logo {
@@ -75,85 +54,70 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: color 0.3s;
-        }
-
-        header nav a i {
-            font-size: 18px;
-            color: #60a5fa;
         }
 
         header nav a:hover {
             color: #60a5fa;
         }
 
-        .contact-section {
-            padding: 100px 20px;
+        .contact-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container h2 {
+            font-size: 32px;
             text-align: center;
-            background: linear-gradient(to right, #2563eb, #1e3a8a);
-        }
-
-        .contact-section h1 {
-            font-size: 50px;
-            font-weight: 700;
+            color: #60a5fa;
             margin-bottom: 20px;
-            color: #dbeafe;
         }
 
-        .contact-section p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #a5b4fc;
-        }
-
-        .contact-section form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-section input, .contact-section textarea {
-            width: 100%;
-            max-width: 600px;
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 10px;
-            border: 1px solid #60a5fa;
-            background: transparent;
-            color: #fff;
-        }
-
-        .contact-section button {
-            background: #60a5fa;
-            border: none;
-            padding: 15px 30px;
+        .contact-container label {
+            display: block;
             font-size: 18px;
-            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-container input,
+        .contact-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: #f9fafb;
+        }
+
+        .contact-container button {
+            width: 100%;
+            padding: 14px;
+            background-color: #60a5fa;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            color: #fff;
             cursor: pointer;
-            color: #1e3a8a;
-            font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
+            transition: background 0.3s ease;
         }
 
-        .contact-section button:hover {
-            transform: scale(1.1);
-            background: #2563eb;
+        .contact-container button:hover {
+            background-color: #2563eb;
         }
 
-        .contact-section button:active {
-            transform: scale(0.95);
-        }
-
-        .footer {
+        footer {
             text-align: center;
             padding: 20px;
             background: #1e3a8a;
+            color: #fff;
             margin-top: 50px;
-            color: #a5b4fc;
         }
 
-        .footer p {
+        footer p {
             font-size: 14px;
         }
     </style>
@@ -166,36 +130,49 @@
             <span>BloxBuddy</span>
         </div>
         <nav>
-            <a href="index.html" onclick="fadeOutAndRedirect('index.html')"><i class="fas fa-home"></i>Home</a>
-            <a href="features.html" onclick="fadeOutAndRedirect('features.html')"><i class="fas fa-cogs"></i>Features</a>
-            <a href="pricing.html" onclick="fadeOutAndRedirect('pricing.html')"><i class="fa-solid fa-dollar-sign"></i>Pricing</a>
-            <a href="contact.html" onclick="fadeOutAndRedirect('contact.html')"><i class="fas fa-phone-alt"></i>Contact</a>
+            <a href="index.html"><i class="fas fa-home"></i>Home</a>
+            <a href="features.html"><i class="fas fa-cogs"></i>Features</a>
+            <a href="pricing.html"><i class="fa-solid fa-dollar-sign"></i>Pricing</a>
+            <a href="contact.html"><i class="fas fa-phone-alt"></i>Contact</a>
         </nav>
     </header>
 
-    <section class="contact-section">
-        <h1>Contact Us</h1>
-        <p>If you have any questions, feel free to reach out to us!</p>
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required><br>
 
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="6" required></textarea>
-            <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br>
+
+            <button type="submit">Send Message</button>
         </form>
-    </section>
+    </div>
 
-    <footer class="footer">
+    <footer>
         <p>&copy; 2024 BloxBuddy. All rights reserved.</p>
     </footer>
 
     <script>
-        function fadeOutAndRedirect(url) {
-            document.body.style.opacity = 0;
-            setTimeout(function () {
-                window.location.href = url;
-            }, 500);
-        }
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from reloading the page
+
+            // Collect form data
+            var subject = document.getElementById("subject").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Create the mailto link
+            var mailtoLink = "mailto:your-email@example.com?subject=" + encodeURIComponent(subject) +
+                "&body=" + encodeURIComponent("From: " + email + "\n\n" + message);
+
+            // Open the email client
+            window.location.href = mailtoLink;
+        });
     </script>
 </body>
 
