@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BloxBuddy">
+    <title>BloxBuddy - Sign Up</title>
+    <!-- Font Awesome Link -->
+    <link rel="icon" href="favicon.ico.ico" type="image/x-icon">
+    <link rel="icon" href="bloxbuddy.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Fallback in case Font Awesome fails -->
+    <style>
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2'),
+                url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .fas {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #fff;
+            overflow-x: hidden;
+            transition: opacity 1s ease;
+        }
+
+        header {
+            background: #1e3a8a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #dbeafe;
+            font-size: 16px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        header nav a i {
+            font-size: 18px;
+            color: #60a5fa;
+        }
+
+        header nav a:hover {
+            color: #60a5fa;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #2563eb, #1e3a8a);
+            position: relative;
+        }
+
+        .hero-section img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #dbeafe;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #a5b4fc;
+        }
+
+        .hero-section button {
+            background: #60a5fa;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #1e3a8a;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+            margin: auto;
+            background-color: #3b82f6; /* Added Background Color */
+        }
+
+        .hero-section button i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .hero-section button:hover {
+            transform: scale(1.1);
+            background: #2563eb; /* Background Change on Hover */
+        }
+
+        .hero-section button:active {
+            transform: scale(0.95);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #60a5fa;
+        }
+
+        .input-field {
+            width: 80%;
+            padding: 12px;
+            font-size: 18px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid #60a5fa;
+            background: transparent;
+            color: #fff;
+            text-align: center;
+        }
+
+        .input-field::placeholder {
+            color: #a5b4fc;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .discord-btn {
+            display: block;
+            width: 60%;
+            margin: 40px auto;
+            padding: 15px;
+            font-size: 18px;
+            background: #60a5fa;
+            border: none;
+            border-radius: 30px;
+            color: #1e3a8a;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .discord-btn:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .discord-btn:active {
+            transform: scale(0.95);
+        }
+
+        .info-section p {
+            font-size: 20px;
+            color: #a5b4fc;
+            text-align: center;
+            margin: 15px auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e3a8a;
+            margin-top: 50px;
+            color: #a5b4fc;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="bloxbuddy.png" alt="Logo">
+            <span>BloxBuddy</span>
+        </div>
+        <nav>
+            <a href="index.html" onclick="fadeOutAndRedirect('index.html')"><i class="fas fa-home"></i>Home</a>
+            <a href="features.html" onclick="fadeOutAndRedirect('features.html')"><i class="fas fa-cogs"></i>Features</a>
+            <a href="pricing.html" onclick="fadeOutAndRedirect('pricing.html')"><i class="fa-solid fa-dollar-sign"></i>Pricing</a>
+            <a href="contact.html" onclick="fadeOutAndRedirect('contact.html')"><i class="fas fa-phone-alt"></i>Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="bloxbuddy.png" alt="Logo">
+        <h1>Signup for BloxBuddy</h1>
+        <p>Get access to our amazing Discord bot!</p>
+    </section>
+
+    <!-- Information Section -->
+    <section class="section info-section">
+        <h2>How to Get Access</h2>
+        <p>To get started with BloxBuddy and use our bot, follow these simple steps:</p>
+        <ol>
+            <li>Join our official Discord server.</li>
+            <li>Get the access code from the server.</li>
+            <li>Enter the code below to gain access to the bot.</li>
+        </ol>
+    </section>
+
+    <!-- Input Code Section -->
+    <section class="section">
+        <h2>Enter Your Access Code</h2>
+        <input type="text" class="input-field" placeholder="Enter Code Here">
+        <button onclick="validateCode()" class="discord-btn">Submit Code</button>
+    </section>
+
+    <!-- Discord Invite Button -->
+    <a href="https://discord.gg/yourdiscordlink" target="_blank" class="discord-btn">Join Our Discord</a>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 BloxBuddy. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function validateCode() {
+            const code = document.querySelector('.input-field').value;
+            if (code === "") {
+                alert("Please enter a code.");
+            } else {
+                alert("Code submitted successfully!");
+            }
+        }
+
+        function fadeOutAndRedirect(url) {
+            document.body.style.opacity = 0;
+            setTimeout(function() {
+                window.location.href = url;
+            }, 500); // Wait for 500ms before redirecting
+        }
+    </script>
+</body>
+
+</html>
