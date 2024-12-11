@@ -35,6 +35,7 @@
             background: linear-gradient(135deg, #1e3a8a, #2563eb);
             color: #fff;
             overflow-x: hidden;
+            transition: opacity 1s ease;
         }
 
         header {
@@ -157,53 +158,42 @@
             color: #60a5fa;
         }
 
-.features {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    display: flex; /* Added to align the cards horizontally */
-    justify-content: space-between; /* Ensures equal spacing between cards */
-    gap: 20px; /* Adds space between the feature cards */
-}
+        .features {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex; /* Added to align the cards horizontally */
+            justify-content: space-between; /* Ensures equal spacing between cards */
+            gap: 20px; /* Adds space between the feature cards */
+            align-items: center; /* Vertically centers the cards */
+            flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
+        }
 
-.features {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    display: flex; /* Align cards horizontally */
-    justify-content: space-between; /* Distribute space between cards */
-    gap: 20px; /* Adds space between the feature cards */
-    align-items: center; /* Vertically centers the cards */
-    flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
-}
+        .features h2 {
+            text-align: center; /* Ensures the title is centered */
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #60a5fa;
+            width: 100%; /* Ensures title takes full width and stays centered */
+        }
 
-.features h2 {
-    text-align: center; /* Ensures the title is centered */
-    font-size: 36px;
-    margin-bottom: 30px;
-    color: #60a5fa;
-    width: 100%; /* Ensures title takes full width and stays centered */
-}
+        .feature-card {
+            width: 30%; /* Keeps each card width at 30% */
+            background: linear-gradient(145deg, #1e40af, #2563eb);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.feature-card {
-    width: 30%; /* Keeps each card width at 30% */
-    background: linear-gradient(145deg, #1e40af, #2563eb);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
 
         .feature-card h3 {
             margin-bottom: 15px;
@@ -296,14 +286,14 @@
             color: #a5b4fc;
         }
 
-        .footer a {
-            text-decoration: none;
-            color: #60a5fa;
-            transition: color 0.3s;
+        .footer p {
+            font-size: 14px;
         }
 
-        .footer a:hover {
-            color: #3b82f6;
+        /* Fade-Out Animation */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease-out;
         }
     </style>
 </head>
@@ -312,95 +302,90 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
-            BloxBuddy
+            <img src="images/logo.png" alt="Logo">
+            <span>BloxBuddy</span>
         </div>
-<nav>
-    <a href="index.html"><i class="fas fa-home"></i>Home</a>
-    <a href="features.html"><i class="fas fa-cogs"></i>Features</a>
-    <a href="about.html"><i class="fas fa-info-circle"></i>About</a>
-    <a href="contact.html"><i class="fas fa-phone-alt"></i>Contact</a>
-</nav>
+        <nav>
+            <a href="index.html" onclick="fadeOutAndRedirect('index.html')"><i class="fas fa-home"></i>Home</a>
+            <a href="features.html" onclick="fadeOutAndRedirect('features.html')"><i class="fas fa-cogs"></i>Features</a>
+            <a href="pricing.html" onclick="fadeOutAndRedirect('pricing.html')"><i class="fa-solid fa-dollar-sign"></i>Pricing</a>
+            <a href="contact.html" onclick="fadeOutAndRedirect('contact.html')"><i class="fas fa-phone-alt"></i>Contact</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
+        <img src="images/logo.png" alt="Logo">
         <h1>Welcome to BloxBuddy</h1>
-        <p>Maximize your BloxFlip experience with exclusive features!</p>
-        <button onclick="window.location.href='features.html'">Get Started <i class="fas fa-arrow-right"></i></button>
+        <p>Your ultimate Roblox companion!</p>
+        <button onclick="fadeOutAndRedirect('features.html')">Get Started <i class="fas fa-arrow-right"></i></button>
     </section>
 
     <!-- Features Section -->
-<!-- Features Section -->
-<section class="section features">
-    <h2>Our Features</h2>
-    <div class="feature-card">
-        <i class="fas fa-trophy"></i>
-        <h3>Win More</h3>
-        <p>Increase your chances of winning with our advanced prediction system.</p>
-    </div>
-    <div class="feature-card">
-        <i class="fas fa-cogs"></i>
-        <h3>Easy Setup</h3>
-        <p>Get started with just a few clicks and optimize your BloxFlip strategies.</p>
-    </div>
-    <div class="feature-card">
-        <i class="fas fa-headset"></i> <!-- Changed icon to headset for 24/7 support -->
-        <h3>24/7 Support</h3>
-        <p>Our dedicated support team is available to always assist you.</p>
-    </div>
-</section>
-
+    <section class="section features">
+        <h2>Features</h2>
+        <div class="feature-card">
+            <i class="fas fa-user"></i>
+            <h3>Profile</h3>
+            <p>Create and customize your profile.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-cogs"></i>
+            <h3>Settings</h3>
+            <p>Adjust your settings easily.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Games</h3>
+            <p>Play the best Roblox games.</p>
+        </div>
+    </section>
 
     <!-- Reviews Section -->
     <section class="reviews">
-        <h2>User Reviews</h2>
+        <h2>What People Are Saying</h2>
         <div class="review-cards">
             <div class="review-card">
-                <img src="user1.jpg" alt="User 1">
+                <img src="images/user1.jpg" alt="User1">
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <h3>USER 1</h3>
-                <p>"BloxBuddy helped me win so many games! Highly recommend!"</p>
+                <h3>John Doe</h3>
+                <p>Best experience ever! BloxBuddy is amazing!</p>
             </div>
             <div class="review-card">
-                <img src="user2.jpg" alt="User 2">
+                <img src="images/user2.jpg" alt="User2">
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
                 </div>
-                <h3>USER 2</h3>
-                <p>"Excellent predictions and amazing customer service. Worth every penny!"</p>
-            </div>
-            <div class="review-card">
-                <img src="user3.jpg" alt="User 3">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <h3>USER 3</h3>
-                <p>"The best tool for improving my BloxFlip game! Highly useful!"</p>
+                <h3>Jane Smith</h3>
+                <p>I love this app! It's perfect for Roblox fans.</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer">
         <p>&copy; 2024 BloxBuddy. All Rights Reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
+
+    <script>
+        function fadeOutAndRedirect(url) {
+            // Apply the fade-out effect
+            document.body.classList.add('fade-out');
+            // Wait for the fade-out to complete before redirecting
+            setTimeout(function () {
+                window.location.href = url;
+            }, 1000); // Delay should match the duration of the fade-out
+        }
+    </script>
 </body>
 
 </html>
