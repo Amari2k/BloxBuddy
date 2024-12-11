@@ -170,6 +170,17 @@
         .payment-method a:active {
             transform: scale(0.95);
         }
+        
+        .payment-method a i {
+            font-size: 20px; /* Adjusts the size of the arrow */
+            color: #1e3a8a; /* Set a default color that matches your theme */
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+       .payment-method a:hover i {
+    color: #fff; /* Change color on hover to white or another contrasting color */
+    transform: translateX(5px); /* Add a slight move to the right to make it feel interactive */
+}
 
         .footer {
             text-align: center;
