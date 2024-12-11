@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BloxBuddy Pricing">
+    <title>BloxBuddy Pricing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2'),
+                url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .fas {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #fff;
+            overflow-x: hidden;
+            transition: opacity 1s ease;
+        }
+
+        header {
+            background: #1e3a8a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        header .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #dbeafe;
+            font-size: 16px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+        }
+
+        header nav a i {
+            font-size: 18px;
+            color: #60a5fa;
+        }
+
+        header nav a:hover {
+            color: #60a5fa;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to right, #2563eb, #1e3a8a);
+            position: relative;
+        }
+
+        .hero-section img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #dbeafe;
+        }
+
+        .hero-section p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #a5b4fc;
+        }
+
+        .hero-section button {
+            background: #60a5fa;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #1e3a8a;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+            margin: auto;
+            background-color: #3b82f6;
+        }
+
+        .hero-section button i {
+            margin-right: 8px;
+            font-size: 20px;
+        }
+
+        .hero-section button:hover {
+            transform: scale(1.1);
+            background: #2563eb;
+        }
+
+        .hero-section button:active {
+            transform: scale(0.95);
+        }
+
+        .pricing-table {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            width: 30%;
+            background: linear-gradient(145deg, #1e40af, #2563eb);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #60a5fa;
+        }
+
+        .pricing-card p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #60a5fa;
+        }
+
+        .pricing-card .cta {
+            background: #60a5fa;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .pricing-card .cta:hover {
+            transform: scale(1.1);
+            background: #2563eb;
+        }
+
+        .pricing-card .cta:active {
+            transform: scale(0.95);
+        }
+
+        .feature-comparison {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 1200px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-comparison table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .feature-comparison th, .feature-comparison td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .feature-comparison th {
+            background-color: #1e40af;
+            color: #fff;
+        }
+
+        .feature-comparison td {
+            background-color: #2563eb;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #1e3a8a;
+            margin-top: 50px;
+            color: #a5b4fc;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="bloxbuddy.png" alt="Logo">
+            <span>BloxBuddy</span>
+        </div>
+        <nav>
+            <a href="index.html" onclick="fadeOutAndRedirect('index.html')"><i class="fas fa-home"></i>Home</a>
+            <a href="features.html" onclick="fadeOutAndRedirect('features.html')"><i class="fas fa-cogs"></i>Features</a>
+            <a href="pricing.html" onclick="fadeOutAndRedirect('pricing.html')"><i class="fa-solid fa-dollar-sign"></i>Pricing</a>
+            <a href="contact.html" onclick="fadeOutAndRedirect('contact.html')"><i class="fas fa-phone-alt"></i>Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <img src="bloxbuddy.png" alt="Logo">
+        <h1>Pricing Plans</h1>
+        <p>Choose the best plan for you!</p>
+    </section>
+
+    <section class="pricing-table">
+        <div class="pricing-card">
+            <h3>Free</h3>
+            <p>No cost, one-time fee</p>
+            <div class="price">$0</div>
+            <button class="cta">Choose Plan</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Premium</h3>
+            <p>One-time fee for exclusive features</p>
+            <div class="price">$15</div>
+            <button class="cta">Choose Plan</button>
+        </div>
+    </section>
+
+    <section class="feature-comparison">
+        <h2>Feature Comparison</h2>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Free</th>
+                <th>Premium</th>
+            </tr>
+            <tr>
+                <td>Access to all features</td>
+                <td>❌</td>
+                <td>✔️</td>
+            </tr>
+            <tr>
+                <td>Premium Support</td>
+                <td>❌</td>
+                <td>✔️</td>
+            </tr>
+            <tr>
+                <td>Custom Configurations</td>
+                <td>❌</td>
+                <td>✔️</td>
+            </tr>
+        </table>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 BloxBuddy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function fadeOutAndRedirect(url) {
+            document.body.style.opacity = '0';
+            setTimeout(function () {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>
