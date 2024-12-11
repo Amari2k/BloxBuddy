@@ -4,11 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BloxBuddy - Maximize your BloxFlip experience with exclusive features!">
+    <meta name="description" content="BloxBuddy">
     <title>BloxBuddy</title>
     <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Fallback in case Font Awesome fails -->
     <style>
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2'),
+                url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff') format('woff');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .fas {
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+        }
+
         /* General Reset */
         * {
             margin: 0;
@@ -110,16 +124,21 @@
             font-weight: bold;
             transition: transform 0.3s, background 0.3s;
             margin: auto;
+            background-color: #3b82f6; /* Added Background Color */
         }
 
         .hero-section button i {
-            margin-left: 8px;
+            margin-right: 8px;
             font-size: 20px;
         }
 
         .hero-section button:hover {
             transform: scale(1.1);
-            background: #2563eb;
+            background: #2563eb; /* Background Change on Hover */
+        }
+
+        .hero-section button:active {
+            transform: scale(0.95);
         }
 
         .section {
@@ -138,17 +157,63 @@
             color: #60a5fa;
         }
 
-        .features {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
+.features {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex; /* Added to align the cards horizontally */
+    justify-content: space-between; /* Ensures equal spacing between cards */
+    gap: 20px; /* Adds space between the feature cards */
+}
+
+.features {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex; /* Align cards horizontally */
+    justify-content: space-between; /* Distribute space between cards */
+    gap: 20px; /* Adds space between the feature cards */
+    align-items: center; /* Vertically centers the cards */
+    flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
+}
+
+.features h2 {
+    text-align: center; /* Ensures the title is centered */
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #60a5fa;
+    width: 100%; /* Ensures title takes full width and stays centered */
+}
+
+.feature-card {
+    width: 30%; /* Keeps each card width at 30% */
+    background: linear-gradient(145deg, #1e40af, #2563eb);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: #60a5fa;
         }
 
-        .feature-card {
-            text-align: center;
-            color: #fff;
-            max-width: 300px;
+        .feature-card p {
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
         .feature-card i {
@@ -158,23 +223,69 @@
             transition: transform 0.3s;
         }
 
-        .feature-card:hover i {
-            transform: scale(1.2);
+        .feature-card i:hover {
+            transform: scale(1.2); /* Animation for Icon on Hover */
         }
 
         .reviews {
-            margin-top: 50px;
-            text-align: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .review {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 10px auto;
+        .reviews h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #60a5fa;
+        }
+
+        .review-cards {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .review-card {
+            width: 30%;
+            background: linear-gradient(145deg, #1e40af, #2563eb);
+            border-radius: 15px;
             padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            text-align: left;
-            color: #dbeafe;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .review-card .stars {
+            font-size: 20px;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .review-card .stars i {
+            margin-right: 2px;
+        }
+
+        .review-card h3 {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .review-card p {
+            font-size: 16px;
+            color: #a5b4fc;
         }
 
         .footer {
@@ -204,12 +315,12 @@
             <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
             BloxBuddy
         </div>
-        <nav>
-            <a href="#"><i class="fas fa-home"></i>Home</a>
-            <a href="#"><i class="fas fa-cogs"></i>Features</a>
-            <a href="#"><i class="fas fa-info-circle"></i>About</a>
-            <a href="#"><i class="fas fa-phone-alt"></i>Contact</a>
-        </nav>
+<nav>
+    <a href="https://www.youtube.com"><i class="fas fa-home"></i>Home</a>
+    <a href="https://www.youtube.com"><i class="fas fa-cogs"></i>Features</a>
+    <a href="https://www.youtube.com"><i class="fas fa-info-circle"></i>About</a>
+    <a href="https://www.youtube.com"><i class="fas fa-phone-alt"></i>Contact</a>
+</nav>
     </header>
 
     <!-- Hero Section -->
@@ -217,48 +328,78 @@
         <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
         <h1>Welcome to BloxBuddy</h1>
         <p>Maximize your BloxFlip experience with exclusive features!</p>
-        <button>Get Started <i class="fas fa-arrow-right"></i></button>
+        <button onclick="location.href='https://sites.google.com/view/bloxbuddygg/features'">Get Started <i class="fas fa-arrow-right"></i></button>
     </section>
 
     <!-- Features Section -->
-    <section class="section">
-        <h2>Our Features</h2>
-        <div class="features">
-            <div class="feature-card">
-                <i class="fas fa-trophy"></i>
-                <h3>Win More</h3>
-                <p>Increase your chances of winning with our advanced prediction system.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-cogs"></i>
-                <h3>Easy Setup</h3>
-                <p>Optimize your BloxFlip strategies with ease.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>Our team is here to assist you anytime!</p>
-            </div>
-        </div>
-    </section>
+<!-- Features Section -->
+<section class="section features">
+    <h2>Our Features</h2>
+    <div class="feature-card">
+        <i class="fas fa-trophy"></i>
+        <h3>Win More</h3>
+        <p>Increase your chances of winning with our advanced prediction system.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-cogs"></i>
+        <h3>Easy Setup</h3>
+        <p>Get started with just a few clicks and optimize your BloxFlip strategies.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-headset"></i> <!-- Changed icon to headset for 24/7 support -->
+        <h3>24/7 Support</h3>
+        <p>Our dedicated support team is available to always assist you.</p>
+    </div>
+</section>
 
-    <!-- User Reviews Section -->
-    <section class="section reviews">
+
+    <!-- Reviews Section -->
+    <section class="reviews">
         <h2>User Reviews</h2>
-        <div class="review">
-            <p><strong>Jane Doe:</strong> "BloxBuddy has completely transformed my BloxFlip game. Highly recommend!"</p>
-        </div>
-        <div class="review">
-            <p><strong>John Smith:</strong> "Amazing features and fantastic support. A must-have for any player!"</p>
-        </div>
-        <div class="review">
-            <p><strong>Emily Johnson:</strong> "The prediction system is spot-on. Love this tool!"</p>
+        <div class="review-cards">
+            <div class="review-card">
+                <img src="user1.jpg" alt="User 1">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>USER 1</h3>
+                <p>"BloxBuddy helped me win so many games! Highly recommend!"</p>
+            </div>
+            <div class="review-card">
+                <img src="user2.jpg" alt="User 2">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>USER 2</h3>
+                <p>"Excellent predictions and amazing customer service. Worth every penny!"</p>
+            </div>
+            <div class="review-card">
+                <img src="user3.jpg" alt="User 3">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>USER 3</h3>
+                <p>"The best tool for improving my BloxFlip game! Highly useful!"</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 BloxBuddy. All rights reserved. <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 BloxBuddy. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </body>
 
