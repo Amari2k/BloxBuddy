@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BloxBuddy">
     <title>BloxBuddy - Features</title>
-    <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Fallback in case Font Awesome fails -->
     <style>
         @font-face {
             font-family: 'Font Awesome 6 Free';
@@ -23,7 +21,6 @@
             font-weight: 900;
         }
 
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -35,6 +32,7 @@
             background: linear-gradient(135deg, #1e3a8a, #2563eb);
             color: #fff;
             overflow-x: hidden;
+            transition: opacity 1s ease;
         }
 
         header {
@@ -124,7 +122,7 @@
             font-weight: bold;
             transition: transform 0.3s, background 0.3s;
             margin: auto;
-            background-color: #3b82f6; /* Added Background Color */
+            background-color: #3b82f6;
         }
 
         .hero-section button i {
@@ -134,7 +132,7 @@
 
         .hero-section button:hover {
             transform: scale(1.1);
-            background: #2563eb; /* Background Change on Hover */
+            background: #2563eb;
         }
 
         .hero-section button:active {
@@ -148,13 +146,6 @@
             border-radius: 15px;
             background: rgba(0, 0, 0, 0.2);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .section h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #60a5fa;
         }
 
         .features {
@@ -224,43 +215,39 @@
             color: #a5b4fc;
         }
 
-        .footer a {
-            text-decoration: none;
-            color: #60a5fa;
-            transition: color 0.3s;
+        .footer p {
+            font-size: 14px;
         }
 
-        .footer a:hover {
-            color: #3b82f6;
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease-out;
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
     <header>
         <div class="logo">
-            <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
-            BloxBuddy
+            <img src="bloxbuddy.png" alt="Logo">
+            <span>BloxBuddy</span>
         </div>
         <nav>
-            <a href="index.html"><i class="fas fa-home"></i>Home</a>
-            <a href="features.html"><i class="fas fa-cogs"></i>Features</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i>About</a>
-            <a href="contact.html"><i class="fas fa-phone-alt"></i>Contact</a>
+            <a href="index.html" onclick="fadeOutAndRedirect('index.html')"><i class="fas fa-home"></i>Home</a>
+            <a href="features.html" onclick="fadeOutAndRedirect('features.html')"><i class="fas fa-cogs"></i>Features</a>
+            <a href="pricing.html" onclick="fadeOutAndRedirect('pricing.html')"><i class="fa-solid fa-dollar-sign"></i>Pricing</a>
+            <a href="contact.html" onclick="fadeOutAndRedirect('contact.html')"><i class="fas fa-phone-alt"></i>Contact</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-section">
-        <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
-        <h1>Our Exclusive Features</h1>
-        <p>Maximize your BloxFlip experience with our powerful features designed to elevate your game!</p>
+        <img src="bloxbuddy.png" alt="Logo">
+        <h1>Discover Our Features</h1>
+        <p>Explore all the amazing features BloxBuddy offers to enhance your BloxFlip experience!</p>
     </section>
 
-    <!-- Features Section -->
     <section class="section features">
-        <h2>Our Features</h2>
+        <h2>Our Key Features</h2>
         <div class="feature-card">
             <i class="fas fa-trophy"></i>
             <h3>Win More</h3>
@@ -274,14 +261,22 @@
         <div class="feature-card">
             <i class="fas fa-headset"></i>
             <h3>24/7 Support</h3>
-            <p>Our dedicated support team is available to always assist you.</p>
+            <p>Our dedicated support team is always available to assist you.</p>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 BloxBuddy. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <p>&copy; 2024 BloxBuddy. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function fadeOutAndRedirect(url) {
+            document.body.classList.add('fade-out');
+            setTimeout(function () {
+                window.location.href = url;
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>
