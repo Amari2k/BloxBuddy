@@ -1,227 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BloxBuddy - Maximize your BloxFlip experience with exclusive features!">
-    <title>BloxBuddy</title>
-    <!-- Font Awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Product Website</title>
     <style>
-        /* General Reset */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3a8a, #2563eb);
-            color: #fff;
-            overflow-x: hidden;
+            background-color: #f4f4f4;
         }
 
         header {
-            background: #1e3a8a;
-            padding: 20px 40px;
+            background-color: #333;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .features {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
         }
 
-        header .logo {
-            display: flex;
-            align-items: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #60a5fa;
-        }
-
-        header .logo img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        header nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        header nav a {
-            text-decoration: none;
-            color: #dbeafe;
-            font-size: 16px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s;
-        }
-
-        header nav a i {
-            font-size: 18px;
-            color: #60a5fa;
-        }
-
-        header nav a:hover {
-            color: #60a5fa;
-        }
-
-        .hero-section {
+        .feature {
             text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(to right, #2563eb, #1e3a8a);
-            position: relative;
+            max-width: 25%;
         }
 
-        .hero-section img {
-            width: 120px;
-            margin-bottom: 20px;
+        .feature img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
         }
 
-        .hero-section h1 {
-            font-size: 50px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #dbeafe;
+        .reviews {
+            padding: 2rem;
+            background-color: #fff;
+            margin-top: 1rem;
         }
 
-        .hero-section p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            color: #a5b4fc;
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
         }
 
-        .hero-section button {
-            background: #60a5fa;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            color: #1e3a8a;
-            font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
-            margin: auto;
+        .review:last-child {
+            border-bottom: none;
         }
 
-        .hero-section button i {
-            margin-left: 8px;
-            font-size: 20px;
-        }
-
-        .hero-section button:hover {
-            transform: scale(1.1);
-            background: #2563eb;
-        }
-
-        .section {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .section h2 {
+        footer {
+            background-color: #333;
+            color: white;
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #60a5fa;
-        }
-
-        .feature-card {
-            text-align: center;
-            color: #fff;
-            margin-bottom: 30px;
-        }
-
-        .feature-card i {
-            font-size: 40px;
-            color: #60a5fa;
-            margin-bottom: 15px;
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover i {
-            transform: scale(1.2);
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background: #1e3a8a;
-            margin-top: 50px;
-            color: #a5b4fc;
-        }
-
-        .footer a {
-            text-decoration: none;
-            color: #60a5fa;
-            transition: color 0.3s;
-        }
-
-        .footer a:hover {
-            color: #3b82f6;
+            padding: 1rem 0;
+            margin-top: 1rem;
         }
     </style>
 </head>
-
 <body>
-    <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
-            BloxBuddy
-        </div>
-        <nav>
-            <a href="#"><i class="fas fa-home"></i>Home</a>
-            <a href="#"><i class="fas fa-cogs"></i>Features</a>
-            <a href="#"><i class="fas fa-info-circle"></i>About</a>
-            <a href="#"><i class="fas fa-phone-alt"></i>Contact</a>
-        </nav>
+        <h1>Welcome to Our Product Page</h1>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <img src="https://i.ibb.co/xjNfBKW/bloxbuddy.png" alt="Logo">
-        <h1>Welcome to BloxBuddy</h1>
-        <p>Maximize your BloxFlip experience with exclusive features!</p>
-        <button>Get Started <i class="fas fa-arrow-right"></i></button>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section">
-        <h2>Our Features</h2>
-        <div class="feature-card">
-            <i class="fas fa-trophy"></i>
-            <h3>Win More</h3>
-            <p>Increase your chances of winning with our advanced prediction system.</p>
+    <section class="features">
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Feature 1">
+            <h3>Feature 1</h3>
+            <p>Experience unparalleled quality with our product's main feature.</p>
         </div>
-        <div class="feature-card">
-            <i class="fas fa-cogs"></i>
-            <h3>Easy Setup</h3>
-            <p>Optimize your BloxFlip strategies with ease.</p>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Feature 2">
+            <h3>Feature 2</h3>
+            <p>Our second feature ensures reliability and performance.</p>
         </div>
-        <div class="feature-card">
-            <i class="fas fa-headset"></i>
-            <h3>24/7 Support</h3>
-            <p>Our team is here to assist you anytime!</p>
+        <div class="feature">
+            <img src="https://via.placeholder.com/80" alt="Feature 3">
+            <h3>Feature 3</h3>
+            <p>Enjoy cutting-edge technology at your fingertips.</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 BloxBuddy. All rights reserved. <a href="#">Privacy Policy</a></p>
+    <section class="reviews">
+        <h2>User Reviews</h2>
+        <div class="review">
+            <p><strong>John Doe:</strong> Amazing product! Totally worth it!</p>
+        </div>
+        <div class="review">
+            <p><strong>Jane Smith:</strong> Helped me achieve what I needed effortlessly.</p>
+        </div>
+        <div class="review">
+            <p><strong>Alex Johnson:</strong> Great value for money and excellent support!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Product Company. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
