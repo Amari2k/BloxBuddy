@@ -195,6 +195,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            margin: 0 auto; /* Center the button */
         }
 
         .pricing-card .cta:hover {
@@ -279,63 +280,70 @@
     <section class="pricing-table">
         <div class="pricing-card">
             <h3>Free</h3>
-            <p>No cost, one-time fee</p>
+            <p>No cost, just sign up</p>
             <div class="price">$0</div>
             <button class="cta"><i class="fas fa-check-circle"></i> Get Started</button>
         </div>
         <div class="pricing-card">
             <h3>Basic</h3>
             <p>Affordable, essential features</p>
-            <div class="price">$10</div>
-            <button class="cta"><i class="fas fa-dollar-sign"></i> Buy Now</button>
+            <div class="price">$15</div>
+            <button class="cta"><i class="fas fa-shopping-cart"></i> Buy Now</button>
         </div>
         <div class="pricing-card">
             <h3>Premium</h3>
             <p>All features included</p>
             <div class="price">$30</div>
-            <button class="cta"><i class="fas fa-dollar-sign"></i> Buy Now</button>
+            <button class="cta"><i class="fas fa-shopping-cart"></i> Buy Now</button>
         </div>
     </section>
 
     <section class="feature-comparison">
-        <h2>Feature Comparison</h2>
+        <h2>Compare Features</h2>
         <table>
-            <tr>
-                <th>Features</th>
-                <th>Free</th>
-                <th>Basic</th>
-                <th>Premium</th>
-            </tr>
-            <tr>
-                <td>Access to all features</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Customer Support</td>
-                <td>Email</td>
-                <td>Email + Chat</td>
-                <td>24/7</td>
-            </tr>
-            <tr>
-                <td>Unlimited Access</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Price</td>
-                <td>$0</td>
-                <td>$10</td>
-                <td>$30</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Features</th>
+                    <th>Free</th>
+                    <th>Basic</th>
+                    <th>Premium</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Access to BloxBuddy</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <td>24/7 Premium Support</td>
+                    <td>❌</td>
+                    <td>✔️</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <td>Extra Features</td>
+                    <td>❌</td>
+                    <td>❌</td>
+                    <td>✔️</td>
+                </tr>
+            </tbody>
         </table>
     </section>
 
     <footer class="footer">
         <p>&copy; 2024 BloxBuddy. All rights reserved.</p>
     </footer>
+
+    <script>
+        function fadeOutAndRedirect(url) {
+            document.body.style.opacity = 0;
+            setTimeout(function () {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
 </body>
 
 </html>
