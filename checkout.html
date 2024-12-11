@@ -119,35 +119,56 @@
         .payment-methods {
             display: flex;
             justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin: 50px 0;
+            gap: 30px;
+            margin-top: 50px;
         }
 
         .payment-method {
             text-align: center;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 30px;
-            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.2);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 200px;
         }
 
         .payment-method i {
             font-size: 50px;
-            margin-bottom: 20px;
             color: #60a5fa;
+            margin-bottom: 20px;
         }
 
         .payment-method h3 {
-            font-size: 22px;
+            font-size: 24px;
             color: #dbeafe;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .payment-method p {
             font-size: 18px;
             color: #a5b4fc;
+            margin-bottom: 20px;
+        }
+
+        .payment-method a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #60a5fa;
+            border-radius: 30px;
+            color: #1e3a8a;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .payment-method a:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .payment-method a:active {
+            transform: scale(0.95);
         }
 
         .footer {
@@ -184,25 +205,33 @@
     <section class="hero-section">
         <img src="bloxbuddy.png" alt="Logo">
         <h1>Checkout</h1>
-        <p>Select your preferred payment method to proceed with the purchase.</p>
+        <p>Select a payment method to complete your purchase!</p>
     </section>
 
     <!-- Payment Methods Section -->
     <section class="payment-methods">
+        <!-- Robux -->
         <div class="payment-method">
             <i class="fas fa-coins"></i>
             <h3>Robux</h3>
-            <p>Pay with Robux for an easy and seamless experience.</p>
+            <p>Pay with Robux instantly.</p>
+            <a href="robux_payment.html">Go to Robux Payment</a>
         </div>
+
+        <!-- Bitcoin -->
         <div class="payment-method">
-            <i class="fas fa-bitcoin"></i>
+            <i class="fab fa-bitcoin"></i>
             <h3>Bitcoin</h3>
-            <p>Insant secure payment via Bitcoin wallet.</p>
+            <p>Pay securely with Bitcoin.</p>
+            <a href="bitcoin_payment.html">Go to Bitcoin Payment</a>
         </div>
+
+        <!-- eGift Cards -->
         <div class="payment-method">
             <i class="fas fa-gift"></i>
             <h3>eGift Cards</h3>
-            <p>Use your eGift cards to make the purchase.</p>
+            <p>Use eGift cards for your purchase.</p>
+            <a href="egiftcard_payment.html">Go to eGift Card Payment</a>
         </div>
     </section>
 
